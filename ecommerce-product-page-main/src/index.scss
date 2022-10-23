@@ -5,6 +5,11 @@
     global style values of the app (colors, font-size, font-weight etc).
 */
 
+/*
+    IF ANY VARIABLE VALUES IN THIS FILE ARE BEING CHANGED, PLEASE MAKE SURE TO
+    CHANGE THE CORRESPONDING CONSTANT VALUES IN THE style_constants.js FILE.
+*/
+
 :root {
     --primary-orange: hsl(26, 100%, 55%);
     --primary-pale-orange: hsl(25, 100%, 94%);

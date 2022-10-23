@@ -4,9 +4,9 @@ const StyledContainer = styled.div`
     min-width: var(--app-container-min-width);
     max-width: var(--app-container-max-width);
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
+    margin: 0 auto;
+    overflow: auto;
+    background-color: lightpink;
 `;
 
 export default StyledContainer;
