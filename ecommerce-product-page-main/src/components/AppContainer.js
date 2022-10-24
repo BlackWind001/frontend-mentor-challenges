@@ -6,7 +6,6 @@ const StyledContainer = styled.div`
     height: 100%;
     margin: 0 auto;
     overflow: auto;
-    background-color: lightpink;
 `;
 
 export default StyledContainer;

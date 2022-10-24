@@ -5,10 +5,10 @@ const StyledHeaderContainer = styled.header`
     display: flex;
     flex-gap: 0.5 rem;
     padding: 1.5rem 1.125rem;
-    background-color: moccasin;
 
     @media screen and (min-width: ${APP_CONTAINER_MIN_WIDTH + 1}px) {
-        padding: 2rem 0;
+        padding: 2rem 0.5rem;
+        border-bottom: 1px solid var(--neutral-light-grayish-blue);
     }
 `;
 
