@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import HeaderContainer from '../../components/HeaderContainer';
+import HeaderContainer from '@components/HeaderContainer';
 import HeaderLeft from './HeaderLeft';
 import HeaderRight from './HeaderRight';
 import Logo from '@images/logo.svg';
 import MenuIcon from '@images/icon-menu.svg';
 import CartIcon from '@images/icon-cart.svg';
 import Avatar from '@images/image-avatar.png';
-import { APP_CONTAINER_MAX_WIDTH } from '../../constants/style_constants';
-import CollapsibleHeaderNav from '../../components/CollapsibleHeaderNav';
+import { APP_CONTAINER_MAX_WIDTH } from '@constants/style_constants';
+import CollapsibleHeaderNav from '@components/CollapsibleHeaderNav';
 
 const StyledLogo = styled.img`
     align-self: center;

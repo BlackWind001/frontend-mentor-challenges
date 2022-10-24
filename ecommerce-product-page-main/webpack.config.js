@@ -35,7 +35,9 @@ module.exports = {
   resolve: {
     extensions: ["*", ".js", ".jsx"],
     alias: {
-      "@images": path.resolve(__dirname, 'src', 'images')
+      "@images": path.resolve(__dirname, 'src', 'images'),
+      "@components": path.resolve(__dirname, 'src', 'components'),
+      "@constants": path.resolve(__dirname, 'src', 'constants')
     }
   },
   output: {

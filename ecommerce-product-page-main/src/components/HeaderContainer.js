@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { APP_CONTAINER_MIN_WIDTH } from '../constants/style_constants';
+import { APP_CONTAINER_MIN_WIDTH } from '@constants/style_constants';
 
 const StyledHeaderContainer = styled.header`
     display: flex;

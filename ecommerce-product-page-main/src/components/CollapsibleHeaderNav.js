@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { APP_CONTAINER_MAX_WIDTH, APP_CONTAINER_MIN_WIDTH } from '../constants/style_constants';
+import { APP_CONTAINER_MAX_WIDTH } from '@constants/style_constants';
 
 const StyledNavContainer = styled.nav`
     display: none;
