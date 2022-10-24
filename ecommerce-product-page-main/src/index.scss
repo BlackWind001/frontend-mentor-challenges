@@ -19,7 +19,8 @@
     --neutral-grayish-blue: hsl(220, 14%, 75%);
     --neutral-light-grayish-blue: hsl(223, 64%, 98%);
     --neutral-white: hsl(0, 0%, 100%);
-    --neutral-black: hsl(0, 0%, 0%)
+    --neutral-black: hsl(0, 0%, 0%);
+    --header-bottom-border-color: #f1f1f1;
 
     --default-font-size: 16px;
     --font-weight-regular: 400;
@@ -27,6 +28,7 @@
 
     --app-container-min-width: 375px;
     --app-container-max-width: 1344px;
+    --app-container-tab-size-width: 992px;
 }
 
 *, *::after, *::before {

@@ -5,8 +5,8 @@ import Header from './sections/header/Header';
 export default function EcommerceApp () {
     return (
         <AppContainer>
-            <Header />
             {/* Responsive header goes here */}
+            <Header />
             {/* Responsive content section goes here */}
         </AppContainer>
     );

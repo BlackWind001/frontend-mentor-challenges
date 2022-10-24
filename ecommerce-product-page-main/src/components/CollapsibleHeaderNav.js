@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { APP_CONTAINER_MAX_WIDTH } from '@constants/style_constants';
+import { APP_CONTAINER_TAB_SIZE_WIDTH } from '@constants/style_constants';
 
 const StyledNavContainer = styled.nav`
     display: none;
 
-    @media screen and (min-width: ${APP_CONTAINER_MAX_WIDTH}px) {
+    @media screen and (min-width: ${APP_CONTAINER_TAB_SIZE_WIDTH}px) {
         display: flex;
         gap: 2rem;
     }
