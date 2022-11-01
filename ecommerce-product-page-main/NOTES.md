@@ -48,3 +48,9 @@ There will be 2 immediate children of the header-container component:
     a. The right section will have a flex-grow: 0 property
     b. Mobile view: The flex gap will be 1 - 1.5rem
     c. Desktop view: The flex gap will be 2 - 2.5rem
+
+
+
+## QUESTIONS
+1. Is the method that I am using to set and unset the box-shadow for the `Add To Cart` button the best way to do so?
+    I feel I am complicating a lot of the stuff.

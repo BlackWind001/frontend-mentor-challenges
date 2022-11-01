@@ -8,7 +8,7 @@ const StyledHeaderContainer = styled.header`
 
     @media screen and (min-width: ${APP_CONTAINER_MIN_WIDTH + 1}px) {
         padding: 2rem 0.5rem;
-        border-bottom: 1px solid var(--header-bottom-border-color);
+        border-bottom: 1px solid var(--neutral-light-grayish-blue);
     }
 `;
 

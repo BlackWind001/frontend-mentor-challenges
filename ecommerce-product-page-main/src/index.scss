@@ -22,13 +22,21 @@
     --neutral-black: hsl(0, 0%, 0%);
     --header-bottom-border-color: #f1f1f1;
 
+    --primary-orange-box-shadow: inset 0 0 2px 2px hsl(26, 100%, 55%);
+    --light-blue-box-shadow:  inset 0 0 4px 4px rgba(173, 216, 230, 1);
+
     --default-font-size: 16px;
+    --bold-font-size: 2rem;
     --font-weight-regular: 400;
     --font-weight-bold: 700;
 
     --app-container-min-width: 375px;
     --app-container-max-width: 1344px;
-    --app-container-tab-size-width: 992px;
+    --app-container-tab-size-width: 900px;
+
+    @media screen and (min-width: 900px) {
+        --bold-font-size: 3rem;
+    }
 }
 
 *, *::after, *::before {
