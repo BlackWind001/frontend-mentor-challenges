@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledQuantityModifierContainer = styled.div`
     display: flex;
     flex-grow: 1;
-    background-color: var(--header-bottom-border-color);
+    background-color: var(--gray);
     border-radius: 1rem;
 `;
 
@@ -41,8 +41,7 @@ const StyledQuantityDisplayer = styled.p`
     text-align: center;
 `;
 
-function QuantityModifier () {
-    const [ quantity, setQuantity ] = React.useState(0);
+function QuantityModifier ({ canAddToCart, setCanAddToCart, quantity, setQuantity }) {
     const [showLeftButtonShadow, setShowLeftButtonShadow] = React.useState(false);
     const [showRightButtonShadow, setShowRightButtonShadow] = React.useState(false);
     const timeoutRef = React.useRef(null);
@@ -65,19 +64,26 @@ function QuantityModifier () {
         }, 300);
     }, [showRightButtonShadow])
 
+    const setCartQuantity = function (quantity) {
+        if ( quantity < 0 ) {
+            return;
+        }
+
+        setQuantity(quantity);
+
+        const newCanAddToCart = quantity <= 0 ? false : true;
+        !(newCanAddToCart === canAddToCart) && setCanAddToCart(newCanAddToCart);
+    }
+
     const handleDecreaseCartQuantity = function () {
         setShowLeftButtonShadow(true);
         const newQuantity = quantity - 1;
 
-        if (newQuantity < 0) {
-            return;
-        }
-
-        setQuantity(newQuantity);
+        setCartQuantity(newQuantity);
     };
     const handleIncreaseCartQuantity = function () {
         setShowRightButtonShadow(true);
-        setQuantity(quantity + 1);
+        setCartQuantity(quantity + 1);
     };
 
     return (

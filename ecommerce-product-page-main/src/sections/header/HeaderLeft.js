@@ -8,6 +8,13 @@ const StyledHeaderLeftSection = styled.section`
 
     @media screen and (min-width: ${APP_CONTAINER_MIN_WIDTH + 1}px) {
         gap: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        & > * {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
     }
 `;
 

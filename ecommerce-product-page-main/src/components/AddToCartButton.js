@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import CartIcon from '@images/icon-cart.svg';
+import ProductContext from '@contexts/ProductContext';
+import CartContext from '@contexts/CartContext';
 
 const StyledAddToCartButton = styled.button`
     flex-grow: 2;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,6 +25,17 @@ const StyledAddToCartButton = styled.button`
     }}
 `;
 
+const StyledButtonOverlay = styled.div`
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: var(--neutral-white);
+    opacity: 0.5;
+`;
+
 const StyledImage = styled.div`
     height: 15px;
     width: 15px;
@@ -34,9 +48,20 @@ const StyledText = styled.span`
     font-weight: var(--font-weight-bold);
 `;
 
-function AddToCartButton () {
+function AddToCartButton ({ isDisabled, quantity }) {
     const [showShadow, setShowShadow] = React.useState(false);
     const timeoutRef = React.useRef(null);
+    const productContextValue = React.useContext(ProductContext);
+    const cartContextValue = React.useContext(CartContext);
+
+    const handleAddToCart = function () {
+        if (quantity <= 0) {
+            return;
+        }
+        const { addToCart } = cartContextValue;
+
+        addToCart(productContextValue, quantity);
+    };
 
     useEffect(() => {
         clearTimeout(timeoutRef.current);
@@ -48,11 +73,20 @@ function AddToCartButton () {
     }, [showShadow]);
 
     const handleClick = function () {
+        if (isDisabled) {
+            return;
+        }
+
+        handleAddToCart();
         setShowShadow(true);
     };
 
     return (
         <StyledAddToCartButton showShadow={showShadow} onClick={handleClick}>
+            {
+                isDisabled &&
+                <StyledButtonOverlay />
+            }
             <StyledImage />
             <StyledText>Add to cart</StyledText>
         </StyledAddToCartButton>

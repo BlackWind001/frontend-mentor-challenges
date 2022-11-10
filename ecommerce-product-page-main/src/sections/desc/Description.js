@@ -5,8 +5,9 @@ import ProductHeading from '@components/ProductHeading';
 import ProductDescription from '@components/ProductDescription';
 import QMAndATCBWrapper from '@components/QMAndATCBWrapper';
 import { APP_CONTAINER_TAB_SIZE_WIDTH } from '@constants/style_constants';
-import { PRODUCT_DESC_TEXT, PRODUCT_HEADING_TEXT, COMPANY_TAG_TEXT } from '@constants/product_constants';
+import { PRODUCT_DESC_TEXT, PRODUCT_OBJ, COMPANY_TAG_TEXT } from '@constants/product_constants';
 import PriceAndDiscount from './PriceAndDiscount';
+import ProductContext from '@contexts/ProductContext';
 
 const StyledDescriptionContentSection = styled.div`
     display: flex;
@@ -47,16 +48,18 @@ const StyledPriceAndDiscount = styled(PriceAndDiscount)`
 export default function Description () {
     return (
         <StyledDescriptionContentSection>
-            {/* Company tag */}
-            <StyledCompanyTag children={COMPANY_TAG_TEXT} />
-            {/* Product heading */}
-            <StyledProductHeading children={PRODUCT_HEADING_TEXT} />
-            {/* Product desc */}
-            <StyledProductDescription children={PRODUCT_DESC_TEXT} />
-            {/* Discount info */}
-            <StyledPriceAndDiscount />
-            {/* Interactive elements: quantity modifier and cart adder */}
-            <QMAndATCBWrapper />
+            <ProductContext.Provider value={PRODUCT_OBJ.itemId}>
+                {/* Company tag */}
+                <StyledCompanyTag children={COMPANY_TAG_TEXT} />
+                {/* Product heading */}
+                <StyledProductHeading children={PRODUCT_OBJ.name} />
+                {/* Product desc */}
+                <StyledProductDescription children={PRODUCT_DESC_TEXT} />
+                {/* Discount info */}
+                <StyledPriceAndDiscount />
+                {/* Interactive elements: quantity modifier and cart adder */}
+                <QMAndATCBWrapper />
+            </ProductContext.Provider>
         </StyledDescriptionContentSection>
     );
 }

@@ -4,7 +4,6 @@ import {
     APP_CONTAINER_TAB_SIZE_WIDTH,
     APP_CONTAINER_MIN_WIDTH
 } from '@constants/style_constants';
-import Image from '@components/Image';
 import ImageCarousel from '@components/ImageCarousel';
 import imgDataArr from './productImages';
 import ThumbnailImageViewer from '@components/ThumbnailImageViewer';

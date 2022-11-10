@@ -17,10 +17,22 @@ const StyledWrapper = styled.div`
 // The function name is a part-acronym for
 // QuantityModifierAndAddToCartButtonWrapper
 function QMAndATCBWrapper () {
+    const [canAddToCart, setCanAddToCart] = React.useState(false);
+    const [ quantity, setQuantity ] = React.useState(0);
+
     return (
         <StyledWrapper>
-            <QuantityModifier />
-            <AddToCartButton />
+            <QuantityModifier
+                {
+                    ...{
+                        canAddToCart,
+                        setCanAddToCart,
+                        quantity,
+                        setQuantity
+                    }
+                }
+            />
+            <AddToCartButton isDisabled={!canAddToCart} quantity={quantity} />
         </StyledWrapper>
     );
 }

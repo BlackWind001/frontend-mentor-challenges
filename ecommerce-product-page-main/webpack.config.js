@@ -37,7 +37,8 @@ module.exports = {
     alias: {
       "@images": path.resolve(__dirname, 'src', 'images'),
       "@components": path.resolve(__dirname, 'src', 'components'),
-      "@constants": path.resolve(__dirname, 'src', 'constants')
+      "@constants": path.resolve(__dirname, 'src', 'constants'),
+      '@contexts': path.resolve(__dirname, 'src', 'contexts')
     }
   },
   output: {
