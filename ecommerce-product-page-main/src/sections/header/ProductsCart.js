@@ -19,6 +19,24 @@ const StyledCartIcon = styled.div`
     }
 `;
 
+const StyledCartCount = styled.div`
+    height: 11px;
+    padding: 0 5.5px;
+    position: absolute;
+    top: -3px;
+    right: -2px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-orange);
+    border-radius: 5px;
+    color: var(--neutral-white);
+    font-size: 7px;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+`;
+
 const StyledCart = styled.div`
     position: absolute;
     top: 3.5rem;
@@ -192,6 +210,12 @@ function ProductsCart () {
                 className={showCart && 'active'}
                 onClick={handleCartToggle}
             />
+            {
+                cartItems.length > 0 &&
+                <StyledCartCount>
+                    {cartItems.reduce((acc, val) => acc + val.quantity, 0)}
+                </StyledCartCount>
+            }
         </StyledCartContainer>
     )
 }
