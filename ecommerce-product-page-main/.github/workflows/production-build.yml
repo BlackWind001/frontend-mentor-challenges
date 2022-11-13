@@ -1,5 +1,4 @@
 name: production-build
-run-name: "${{ github.actor }}'s attempt at CI/CD"
 on: [push]
 jobs:
   install-node-modules-and-build:
