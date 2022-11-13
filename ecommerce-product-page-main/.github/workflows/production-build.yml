@@ -1,0 +1,22 @@
+name: production-build
+run-name: "${{ github.actor }}'s attempt at CI/CD"
+on: [push]
+jobs:
+  install-node-modules-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 12.20.0
+      - run: npm install
+      - run: npm run build
+      - name: deploy
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: build
+          keep_history: true
+          verbose: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
