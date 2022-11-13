@@ -19,4 +19,4 @@ jobs:
           keep_history: true
           verbose: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
